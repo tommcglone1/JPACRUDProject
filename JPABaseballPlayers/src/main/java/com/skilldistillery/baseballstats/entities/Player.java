@@ -8,35 +8,36 @@ import javax.persistence.Id;
 
 @Entity
 public class Player {
-	
+
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
-	@Column(name="first_name")
+
+	@Column(name = "first_name")
 	private String firstName;
-	
-	@Column(name="last_name")
+
+	@Column(name = "last_name")
 	private String lastName;
-	
+
 	private String team;
-	
+
 	private String position;
-	
+
 	private int hits;
-	
+
 	private int homeruns;
-	
-	@Column(name="batting_average")
+
+	@Column(name = "batting_average")
 	private double battingAverage;
-	
-	
-	@Column(name="wins_above_replacement")
+
+	@Column(name = "wins_above_replacement")
 	private double WAR;
 	
-	
+	@Column(name="imgurl")
+	private String imgUrl;
+
 	public Player() {
-		
+
 	}
 
 	public int getId() {
@@ -111,7 +112,13 @@ public class Player {
 		WAR = wAR;
 	}
 
+	public String getImgUrl() {
+		return imgUrl;
+	}
 
+	public void setImgUrl(String imgUrl) {
+		this.imgUrl = imgUrl;
+	}
 
 	@Override
 	public String toString() {
@@ -120,7 +127,4 @@ public class Player {
 				+ battingAverage + ", WAR=" + WAR + "]";
 	}
 
-	
-	
-	
 }

@@ -1,16 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Delete Successful</title>
-<jsp:include page="../bootstrapheader.jsp"/>
+<jsp:include page="../bootstrapheader.jsp" />
 </head>
 <body>
-<jsp:include page="../navbar.jsp"/>
-<p>your delete was successful</p>
+	<div class="container-fluid">
+		<jsp:include page="../navbar.jsp" />
+		<h2>your delete was successful</h2>
 
-<jsp:include page="../bootstrapfooter.jsp"/>
+		<jsp:include page="../bootstrapfooter.jsp" />
+	</div>
 </body>
 </html>
