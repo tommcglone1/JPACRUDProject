@@ -6,8 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Creation Successful</title>
+<jsp:include page="../bootstrapheader.jsp"/>
 </head>
 <body>
+<jsp:include page="../navbar.jsp"/>
 	<h2>Congratulations! Your player was created!</h2>
 
 	<table>
@@ -40,5 +42,12 @@
 	</table>
 		<a href="beginUpdate.do?playerId=${player.id}">Update</a>
 			<a href="home.do">Home</a>
+			<form action="delete.do" method="POST">
+				<label for="playerId"></label> 
+				<input type="hidden" name="playerId" value="${player.id}" />
+				<input type="submit" value="Delete" />
+			</form>
+			
+<jsp:include page="../bootstrapfooter.jsp"/>
 </body>
 </html>

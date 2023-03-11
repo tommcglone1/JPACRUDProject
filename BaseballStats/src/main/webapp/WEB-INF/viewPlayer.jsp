@@ -6,9 +6,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Display Player</title>
+<jsp:include page="bootstrapheader.jsp"/>
 </head>
 <body>
-
+<jsp:include page="navbar.jsp"/>
 
 	<c:choose>
 		<c:when test="${not empty player}">
@@ -58,5 +59,6 @@
 			<a href="home.do">Home</a>
 		</c:otherwise>
 	</c:choose>
+	<jsp:include page="bootstrapfooter.jsp"/>
 </body>
 </html>

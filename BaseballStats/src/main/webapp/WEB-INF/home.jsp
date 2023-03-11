@@ -6,15 +6,16 @@
 <head>
 <meta charset="UTF-8">
 <title>STATS STATS STATS</title>
+<jsp:include page="bootstrapheader.jsp"/>
 </head>
 <body>
 <h1>Welcome to Fake ESPN</h1>
 
-
+<jsp:include page="navbar.jsp"/>
 	
-	<a href="findPlayerById.html">Find a Player</a>
 	
-	<a href="create.html">Create a Player</a>
+	
+	
 	
 
 	<c:choose>
@@ -27,5 +28,6 @@
 	</c:forEach>
 	</c:otherwise>
 	</c:choose>
+	<jsp:include page="bootstrapfooter.jsp"/>
 </body>
 </html>

@@ -38,7 +38,7 @@ public class PlayerController {
 		Player createdPlayer = null;
 		createdPlayer = playerDao.create(player);
 		if (createdPlayer == null) {
-			mv.setViewName("createError");
+			mv.setViewName("createViews/createError");
 		} else {
 			redir.addFlashAttribute("player", createdPlayer);
 			mv.setViewName("redirect:playerCreated.do");
@@ -48,7 +48,7 @@ public class PlayerController {
 
 	@RequestMapping(path = "playerCreated.do", method = RequestMethod.GET)
 	public String createdPlayer() {
-		return "playerCreated";
+		return "createViews/playerCreated";
 
 	}
 
@@ -57,7 +57,7 @@ public class PlayerController {
 		ModelAndView mv = new ModelAndView();
 		Player player = playerDao.findById(playerId);
 		mv.addObject("player", player);
-		mv.setViewName("update");
+		mv.setViewName("updateViews/update");
 		return mv;
 
 	}
@@ -67,7 +67,7 @@ public class PlayerController {
 		ModelAndView mv = new ModelAndView();
 		Player updatedPlayer = playerDao.update(playerId, player);
 		if (updatedPlayer == null) {
-			mv.setViewName("updateError");
+			mv.setViewName("updateViews/updateError");
 		} else {
 			redir.addFlashAttribute("player", updatedPlayer);
 			mv.setViewName("redirect:updatedPlayer.do");
@@ -77,7 +77,7 @@ public class PlayerController {
 
 	@RequestMapping(path = "updatedPlayer.do", method = RequestMethod.GET)
 	public String playerUpdated() {
-		return "updateSuccesful";
+		return "updateViews/updateSuccesful";
 	}
 
 	@RequestMapping(path = "delete.do", method = RequestMethod.POST)
@@ -89,13 +89,13 @@ public class PlayerController {
 			redir.addFlashAttribute("player", playerId);
 			mv.setViewName("redirect:playerDeleted.do");
 		} else {
-			mv.setViewName("deleteError");
+			mv.setViewName("deleteViews/deleteError");
 
 		}
 		return mv;
 	}
 	@RequestMapping(path= "playerDeleted.do", method = RequestMethod.GET)
 	public String deletedPlayer() {
-		return "deleteSuccessful";
+		return "deleteViews/deleteSuccessful";
 	}
 }
