@@ -11,8 +11,9 @@
 <h1>Welcome to Fake ESPN</h1>
 
 
-
-
+	
+	<a href="findPlayerById.html">Find a Player</a>
+	
 	<a href="create.html">Create a Player</a>
 	
 

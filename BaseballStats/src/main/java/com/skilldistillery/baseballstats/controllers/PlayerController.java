@@ -24,6 +24,15 @@ public class PlayerController {
 		return "home";
 	}
 	
+	@RequestMapping(path = "findPlayerDataById.do")
+	public ModelAndView findPlayerById(int playerId) {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("player", playerDao.findById(playerId));
+		mv.setViewName("viewPlayer");
+		return mv;
+		
+	}
+	
 	@RequestMapping(path = "create.do", method = RequestMethod.POST)
 	public ModelAndView createPlayer(Player player, RedirectAttributes redir) {
 		ModelAndView mv = new ModelAndView();
