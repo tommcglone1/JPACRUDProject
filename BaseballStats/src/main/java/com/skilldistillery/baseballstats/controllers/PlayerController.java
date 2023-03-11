@@ -37,12 +37,8 @@ public class PlayerController {
 		ModelAndView mv = new ModelAndView();
 		Player createdPlayer = null;
 		createdPlayer = playerDao.create(player);
-		if (createdPlayer == null) {
-			mv.setViewName("createViews/createError");
-		} else {
-			redir.addFlashAttribute("player", createdPlayer);
-			mv.setViewName("redirect:playerCreated.do");
-		}
+		redir.addFlashAttribute("player", createdPlayer);
+		mv.setViewName("redirect:playerCreated.do");
 		return mv;
 	}
 
@@ -66,12 +62,9 @@ public class PlayerController {
 	public ModelAndView updatePlayer(int playerId, Player player, RedirectAttributes redir) {
 		ModelAndView mv = new ModelAndView();
 		Player updatedPlayer = playerDao.update(playerId, player);
-		if (updatedPlayer == null) {
-			mv.setViewName("updateViews/updateError");
-		} else {
-			redir.addFlashAttribute("player", updatedPlayer);
-			mv.setViewName("redirect:updatedPlayer.do");
-		}
+		redir.addFlashAttribute("player", updatedPlayer);
+		mv.setViewName("redirect:updatedPlayer.do");
+
 		return mv;
 	}
 
@@ -85,16 +78,15 @@ public class PlayerController {
 		ModelAndView mv = new ModelAndView();
 		boolean deleted = playerDao.deleteById(playerId);
 		if (deleted) {
-
 			redir.addFlashAttribute("player", playerId);
 			mv.setViewName("redirect:playerDeleted.do");
 		} else {
 			mv.setViewName("deleteViews/deleteError");
-
 		}
 		return mv;
 	}
-	@RequestMapping(path= "playerDeleted.do", method = RequestMethod.GET)
+
+	@RequestMapping(path = "playerDeleted.do", method = RequestMethod.GET)
 	public String deletedPlayer() {
 		return "deleteViews/deleteSuccessful";
 	}

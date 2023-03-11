@@ -6,16 +6,18 @@
 <head>
 <meta charset="UTF-8">
 <title>Update Player</title>
+<jsp:include page="../bootstrapheader.jsp" />
 </head>
 <body>
+	<jsp:include page="../navbar.jsp" />
 	<h2>Update Player</h2>
 	<br>
 	<form action="update.do" method="POST">
-	<input type="hidden" name="playerId" value="${player.id }">
-		<label for="firstName">First Name: </label> <input type="text"
-			name=firstName value="${player.firstName}" required/> <br> <label
+		<input type="hidden" name="playerId" value="${player.id }"> <label
+			for="firstName">First Name: </label> <input type="text"
+			name=firstName value="${player.firstName}" required /> <br> <label
 			for="lastName">Last Name: </label> <input type="text" name=lastName
-			value="${player.lastName}" required/> <br> <label for="team">Team:
+			value="${player.lastName}" required /> <br> <label for="team">Team:
 		</label> <select name="team" id="team">
 			<option value="${player.team}" selected>${player.team}</option>
 			<option value="Phillies">Phillies</option>
@@ -36,39 +38,19 @@
 			<option value="Center Field">Center Field</option>
 			<option value="Right Field">Right Field</option>
 		</select> <br> <label for="hits">Number of Hits:</label> <input
-			type="number" name="hits" size=4 value="${player.hits}" min="0"> <br>
-		<label for="homeruns">Number of Homeruns:</label> <input type="number"
-			name="homeruns" size=4 value="${player.homeruns}" min="0"> <br>
-		<label for="battingAverage">Batting Average:</label> <input
-			type="number" step="0.001" name="battingAverage" min=".000" max="1"
-			value="${player.battingAverage}"> <br> <label for="WAR">WAR:</label>
-		<input type="number" step="0.1" name="WAR" min="-162" max="162"
-			value="${player.WAR}"> <br> <label for="isRookie">Is
-			this player a rookie?</label>
-		<c:choose>
-			<c:when test="${player.rookie == true }">
-				<input type="radio" id="true" name="isRookie" value="true"
-					checked="checked">
-				<label for="true">Yes</label>
-				<input type="radio" id="false" name="isRookie" value="flase">
-				<label for="false">No</label>
+			type="number" name="hits" size=4 value="${player.hits}" min="0">
+		<br> <label for="homeruns">Number of Homeruns:</label> <input
+			type="number" name="homeruns" size=4 value="${player.homeruns}"
+			min="0"> <br> <label for="battingAverage">Batting
+			Average:</label> <input type="number" step="0.001" name="battingAverage"
+			min=".000" max="1" value="${player.battingAverage}"> <br>
+		<label for="WAR">WAR:</label> <input type="number" step="0.1"
+			name="WAR" min="-162" max="162" value="${player.WAR}"> <br>
+		<input type="submit" value="Update Player">
 
-				<input type="submit" value="Update Player">
-			</c:when>
-			<c:otherwise>
-				<input type="radio" id="true" name="isRookie" value="true">
-				<label for="true">Yes</label>
-				<input type="radio" id="false" name="isRookie" value="flase"
-					checked="checked">
-				<label for="false">No</label>
-
-				<input type="submit" value="Update Player">
-			</c:otherwise>
-		</c:choose>
 	</form>
-	
-	<br>
-			<a href="home.do">Home</a>
+
+	<jsp:include page="../bootstrapfooter.jsp" />
 
 </body>
 </html>

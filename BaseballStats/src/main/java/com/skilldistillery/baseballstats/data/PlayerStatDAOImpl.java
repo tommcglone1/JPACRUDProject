@@ -21,6 +21,7 @@ public class PlayerStatDAOImpl implements PlayerStatDAO {
 	public Player findById(int id) {
 		return em.find(Player.class, id);
 	}
+	
 
 	@Override
 	public List<Player> findAll() {
@@ -49,7 +50,6 @@ public class PlayerStatDAOImpl implements PlayerStatDAO {
 		updatedPlayer.setHomeruns(player.getHomeruns());
 		updatedPlayer.setBattingAverage(player.getBattingAverage());
 		updatedPlayer.setWAR(player.getWAR());
-		updatedPlayer.setRookie(player.isRookie());
 		return updatedPlayer;
 	}
 
@@ -64,5 +64,8 @@ public class PlayerStatDAOImpl implements PlayerStatDAO {
 		}
 		return success;
 	}
+
+
+	
 
 }

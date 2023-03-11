@@ -23,19 +23,19 @@
 				<th>Homeruns</th>
 				<th>Batting Avg.</th>
 				<th>WAR</th>
-				<th>Rookie</th>
+				
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
-				<td colspan="2">${player.firstName}${player.lastName}</td>
+				<td colspan="2">${player.firstName} ${player.lastName}</td>
 				<td>${player.team}</td>
 				<td>${player.position}</td>
 				<td>${player.hits}</td>
 				<td>${player.homeruns}</td>
 				<td>${player.battingAverage}</td>
 				<td>${player.WAR}</td>
-				<td>${player.rookie}</td>
+				
 
 			</tr>
 		</tbody>
@@ -46,7 +46,7 @@
 
 
 			<a href="beginUpdate.do?playerId=${player.id}">Update</a>
-			<a href="home.do">Home</a>
+			
 			
 			<form action="delete.do" method="POST">
 				<label for="playerId"></label> 
@@ -56,7 +56,7 @@
 		</c:when>
 		<c:otherwise>
 			<p>No player found</p>
-			<a href="home.do">Home</a>
+			
 		</c:otherwise>
 	</c:choose>
 	<jsp:include page="bootstrapfooter.jsp"/>

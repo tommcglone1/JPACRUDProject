@@ -46,7 +46,8 @@ class PlayerTest {
 		assertNotNull(player);
 		assertEquals("Bryce", player.getFirstName());
 		assertEquals("Harper", player.getLastName());
-		
+		assertEquals("Phillies", player.getTeam());
+		assertEquals("RF", player.getPosition());
 	}
 
 }

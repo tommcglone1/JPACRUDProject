@@ -22,7 +22,7 @@
 				<th>Homeruns</th>
 				<th>Batting Avg.</th>
 				<th>WAR</th>
-				<th>Rookie</th>
+				
 			</tr>
 		</thead>
 		<tbody>
@@ -34,14 +34,14 @@
 				<td>${player.homeruns}</td>
 				<td>${player.battingAverage}</td>
 				<td>${player.WAR}</td>
-				<td>${player.rookie}</td>
+				
 
 			</tr>
 		</tbody>
 
 	</table>
 		<a href="beginUpdate.do?playerId=${player.id}">Update</a>
-			<a href="home.do">Home</a>
+		
 			<form action="delete.do" method="POST">
 				<label for="playerId"></label> 
 				<input type="hidden" name="playerId" value="${player.id}" />

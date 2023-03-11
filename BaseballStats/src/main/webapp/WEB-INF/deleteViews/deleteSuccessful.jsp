@@ -5,9 +5,12 @@
 <head>
 <meta charset="UTF-8">
 <title>Delete Successful</title>
+<jsp:include page="../bootstrapheader.jsp"/>
 </head>
 <body>
+<jsp:include page="../navbar.jsp"/>
 <p>your delete was successful</p>
-<a href="home.do">Home</a>
+
+<jsp:include page="../bootstrapfooter.jsp"/>
 </body>
 </html>

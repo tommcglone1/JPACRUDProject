@@ -34,8 +34,6 @@ public class Player {
 	@Column(name="wins_above_replacement")
 	private double WAR;
 	
-	@Column(name="is_rookie")
-	private boolean isRookie;
 	
 	public Player() {
 		
@@ -113,19 +111,13 @@ public class Player {
 		WAR = wAR;
 	}
 
-	public boolean isRookie() {
-		return isRookie;
-	}
 
-	public void setRookie(boolean isRookie) {
-		this.isRookie = isRookie;
-	}
 
 	@Override
 	public String toString() {
 		return "Player [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", team=" + team
 				+ ", position=" + position + ", hits=" + hits + ", homeruns=" + homeruns + ", battingAverage="
-				+ battingAverage + ", WAR=" + WAR + ", isRookie=" + isRookie + "]";
+				+ battingAverage + ", WAR=" + WAR + "]";
 	}
 
 	
