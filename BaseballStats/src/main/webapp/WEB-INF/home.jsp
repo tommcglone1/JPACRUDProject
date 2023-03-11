@@ -8,7 +8,13 @@
 <title>STATS STATS STATS</title>
 </head>
 <body>
-<h1>Player Stats</h1>
+<h1>Welcome to Fake ESPN</h1>
+
+
+
+
+	<a href="create.html">Create a Player</a>
+	
 
 	<c:choose>
 	<c:when test="${empty players }"> No players found.</c:when>

@@ -21,6 +21,22 @@ public class Player {
 	
 	private String team;
 	
+	private String position;
+	
+	private int hits;
+	
+	private int homeruns;
+	
+	@Column(name="batting_average")
+	private double battingAverage;
+	
+	
+	@Column(name="wins_above_replacement")
+	private double WAR;
+	
+	@Column(name="is_rookie")
+	private boolean isRookie;
+	
 	public Player() {
 		
 	}
@@ -49,11 +65,6 @@ public class Player {
 		this.lastName = lastName;
 	}
 
-	@Override
-	public String toString() {
-		return "Player [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", team=" + team + "]";
-	}
-
 	public String getTeam() {
 		return team;
 	}
@@ -61,6 +72,63 @@ public class Player {
 	public void setTeam(String team) {
 		this.team = team;
 	}
+
+	public String getPosition() {
+		return position;
+	}
+
+	public void setPosition(String position) {
+		this.position = position;
+	}
+
+	public int getHits() {
+		return hits;
+	}
+
+	public void setHits(int hits) {
+		this.hits = hits;
+	}
+
+	public int getHomeruns() {
+		return homeruns;
+	}
+
+	public void setHomeruns(int homeruns) {
+		this.homeruns = homeruns;
+	}
+
+	public double getBattingAverage() {
+		return battingAverage;
+	}
+
+	public void setBattingAverage(double battingAverage) {
+		this.battingAverage = battingAverage;
+	}
+
+	public double getWAR() {
+		return WAR;
+	}
+
+	public void setWAR(double wAR) {
+		WAR = wAR;
+	}
+
+	public boolean isRookie() {
+		return isRookie;
+	}
+
+	public void setRookie(boolean isRookie) {
+		this.isRookie = isRookie;
+	}
+
+	@Override
+	public String toString() {
+		return "Player [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", team=" + team
+				+ ", position=" + position + ", hits=" + hits + ", homeruns=" + homeruns + ", battingAverage="
+				+ battingAverage + ", WAR=" + WAR + ", isRookie=" + isRookie + "]";
+	}
+
+	
 	
 	
 }

@@ -30,20 +30,39 @@ public class PlayerStatDAOImpl implements PlayerStatDAO {
 
 	@Override
 	public Player create(Player player) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		em.persist(player);
+		em.flush();
+		
+		return player;
 	}
 
 	@Override
 	public Player update(int id, Player player) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Player updatedPlayer = em.find(Player.class, id);
+		updatedPlayer.setFirstName(player.getFirstName());
+		updatedPlayer.setLastName(player.getLastName());
+		updatedPlayer.setTeam(player.getTeam());
+		updatedPlayer.setPosition(player.getPosition());
+		updatedPlayer.setHits(player.getHits());
+		updatedPlayer.setHomeruns(player.getHomeruns());
+		updatedPlayer.setBattingAverage(player.getBattingAverage());
+		updatedPlayer.setWAR(player.getWAR());
+		updatedPlayer.setRookie(player.isRookie());
+		return updatedPlayer;
 	}
 
 	@Override
 	public boolean deleteById(int id) {
-		// TODO Auto-generated method stub
-		return false;
+		boolean success = false;
+		
+		Player player = em.find(Player.class, id);
+		if (em.contains(player)) {
+			em.remove(player);
+			success = true;
+		}
+		return success;
 	}
 
 }
