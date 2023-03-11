@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,65 +10,65 @@
 <body>
 	<h2>Update Player</h2>
 	<br>
-	<form action="create.do" method="POST">
-	<label for="firstName">First Name: </label>
-	<input type="text" name=firstName />
-	<br>
-	<label for="lastName">Last Name: </label>
-	<input type="text" name=lastName />
-	<br>
+	<form action="update.do" method="POST">
+	<input type="hidden" name="playerId" value="${player.id }">
+		<label for="firstName">First Name: </label> <input type="text"
+			name=firstName value="${player.firstName}" required/> <br> <label
+			for="lastName">Last Name: </label> <input type="text" name=lastName
+			value="${player.lastName}" required/> <br> <label for="team">Team:
+		</label> <select name="team" id="team">
+			<option value="${player.team}" selected>${player.team}</option>
+			<option value="Phillies">Phillies</option>
+			<option value="Braves">Braves</option>
+			<option value="Angels">Angels</option>
+			<option value="Orioles">Orioles</option>
+			<option value="Yankees">Yankees</option>
+		</select> <br> <label for="position">Position</label> <select
+			name="position" id="position">
+			<option value="${player.position}" selected>${player.position}</option>
+			<option value="Pitcher">Pitcher</option>
+			<option value="Catcher">Catcher</option>
+			<option value="FirstBase">First Base</option>
+			<option value="SecondBase">Second Base</option>
+			<option value="ThirdBase">ThirdBase</option>
+			<option value="ShortStop">ShortStop</option>
+			<option value="LeftField">Left Field</option>
+			<option value="Center Field">Center Field</option>
+			<option value="Right Field">Right Field</option>
+		</select> <br> <label for="hits">Number of Hits:</label> <input
+			type="number" name="hits" size=4 value="${player.hits}" min="0"> <br>
+		<label for="homeruns">Number of Homeruns:</label> <input type="number"
+			name="homeruns" size=4 value="${player.homeruns}" min="0"> <br>
+		<label for="battingAverage">Batting Average:</label> <input
+			type="number" step="0.001" name="battingAverage" min=".000" max="1"
+			value="${player.battingAverage}"> <br> <label for="WAR">WAR:</label>
+		<input type="number" step="0.1" name="WAR" min="-162" max="162"
+			value="${player.WAR}"> <br> <label for="isRookie">Is
+			this player a rookie?</label>
+		<c:choose>
+			<c:when test="${player.rookie == true }">
+				<input type="radio" id="true" name="isRookie" value="true"
+					checked="checked">
+				<label for="true">Yes</label>
+				<input type="radio" id="false" name="isRookie" value="flase">
+				<label for="false">No</label>
 
-	<label for="team">Team: </label>
-	<select name="team" id="team">
-		<option value="SelectATeam">Select a Team</option>
-		<option value="Phillies">Phillies</option>
-		<option value="Braves">Braves</option>
-		<option value="Angels">Angels</option>
-		<option value="Orioles">Orioles</option>
-		<option value="Yankees">Yankees</option>
-	</select>
+				<input type="submit" value="Update Player">
+			</c:when>
+			<c:otherwise>
+				<input type="radio" id="true" name="isRookie" value="true">
+				<label for="true">Yes</label>
+				<input type="radio" id="false" name="isRookie" value="flase"
+					checked="checked">
+				<label for="false">No</label>
 
-	<br>
-	<label for="position">Position</label>
-	<select name="position" id="position">
-		<option value="Select">Select a poistion</option>
-		<option value="Pitcher">Pitcher</option>
-		<option value="Catcher">Catcher</option>
-		<option value="FirstBase">First Base</option>
-		<option value="SecondBase">Second Base</option>
-		<option value="ThirdBase">ThirdBase</option>
-		<option value="ShortStop">ShortStop</option>
-		<option value="LeftField">Left Field</option>
-		<option value="Center Field">Center Field</option>
-		<option value="Right Field">Right Field</option>
-	</select>
-	<br>
-	<label for="hits">Number of Hits:</label>
-	<input type="number" name="hits" size=4>
-	<br>
-	<label for="homeruns">Number of Homeruns:</label>
-	<input type="number" name="homeruns" size=4>
-	<br>
-	<label for="battingAverage">Batting Average:</label> 
-	<input type="number" step="0.001" name="battingAverage" min=".001" max="1">
-	<br>
-	<label for="WAR">WAR:</label> 
-	<input type="number" step="0.1" name="WAR" min="-162" max="162">
-	<br>
-	<label for="isRookie">Is this player a rookie?</label>
-	<input type="radio" id="true" name="isRookie" value="true">
-	<label for="true">Yes</label>
-	<input type="radio" id="false" name="isRookie" value="flase">
-	<label for="false">No</label>
-	
-	<input type="submit" value="Update Player">
+				<input type="submit" value="Update Player">
+			</c:otherwise>
+		</c:choose>
 	</form>
-
-
-
-
-
-
+	
+	<br>
+			<a href="home.do">Home</a>
 
 </body>
 </html>

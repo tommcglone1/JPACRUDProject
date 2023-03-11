@@ -21,7 +21,8 @@
 	<c:when test="${empty players }"> No players found.</c:when>
 	<c:otherwise>
 	<c:forEach var="player" items="${players}">
-	<li> ${player.id } ${player.firstName } ${player.lastName }</li>
+	<li><a href="findPlayerDataById.do?playerId=${player.id}"> ${player.id } 
+					${player.firstName } ${player.lastName }</a></li>
 	
 	</c:forEach>
 	</c:otherwise>

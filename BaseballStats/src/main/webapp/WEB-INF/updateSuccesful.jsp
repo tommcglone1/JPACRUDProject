@@ -1,14 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Creation Successful</title>
+<title>Update Successful</title>
 </head>
 <body>
-	<h2>Congratulations! Your player was created!</h2>
+<h2>Your Update was Successful!</h2>
 
 	<table>
 		<thead>
@@ -36,9 +35,15 @@
 
 			</tr>
 		</tbody>
-
 	</table>
-		<a href="beginUpdate.do?playerId=${player.id}">Update</a>
+	
+		<form action="delete.do" method="POST">
+				<label for="playerId"></label> 
+				<input type="hidden" name="playerId" value="${player.id}" />
+				<input type="submit" value="Delete" />
+			</form>
+			
+				<a href="beginUpdate.do?playerId=${player.id}">Update</a>
 			<a href="home.do">Home</a>
 </body>
 </html>
