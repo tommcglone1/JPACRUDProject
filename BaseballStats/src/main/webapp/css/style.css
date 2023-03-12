@@ -1,3 +1,7 @@
+#table2 {
+	width: 20%;
+}
+
 thead {
 	background-color: black;
 	color: white;
@@ -23,9 +27,9 @@ tbody {
 }
 
 nav {
-	background: rgb(103, 97, 152);
+	 background: rgb(103, 97, 152);
 	background: linear-gradient(90deg, rgba(103, 97, 152, 0.61390493697479)
-		16%, rgba(255, 255, 255, 0) 100%);
+		16%, rgba(255, 255, 255, 0) 100%); 
 }
 a {
 	color: white;
@@ -36,3 +40,7 @@ h2 {
 form {
 	color: white;
 }
+h1 {
+color: white;
+}
+

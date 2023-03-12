@@ -17,7 +17,7 @@
 			<c:when test="${empty players }"> No players found.</c:when>
 			<c:otherwise>
 			<h2>Current Players</h2>
-			<table class="table table-hover table-dark">
+			<table id="table2" class="table table-hover table-dark" >
 				<c:forEach var="player" items="${players}">
 				<tr>
 					<td><a href="findPlayerDataById.do?playerId=${player.id}">${player.id}. ${player.firstName } ${player.lastName }</a></td>

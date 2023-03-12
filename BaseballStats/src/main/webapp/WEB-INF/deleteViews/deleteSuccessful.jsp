@@ -10,7 +10,7 @@
 <body>
 	<div class="container-fluid">
 		<jsp:include page="../navbar.jsp" />
-		<h2>your delete was successful</h2>
+		<h2>Your Delete Was Successful!</h2>
 
 		<jsp:include page="../bootstrapfooter.jsp" />
 	</div>

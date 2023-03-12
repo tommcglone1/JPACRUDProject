@@ -81,7 +81,8 @@ public class PlayerController {
 			redir.addFlashAttribute("player", playerId);
 			mv.setViewName("redirect:playerDeleted.do");
 		} else {
-			mv.setViewName("deleteViews/deleteError");
+			mv.setViewName("redirect:playerNotDeleted.do");
+			
 		}
 		return mv;
 	}
@@ -89,5 +90,9 @@ public class PlayerController {
 	@RequestMapping(path = "playerDeleted.do", method = RequestMethod.GET)
 	public String deletedPlayer() {
 		return "deleteViews/deleteSuccessful";
+	}
+	@RequestMapping(path = "playerNotDeleted.do", method = RequestMethod.GET)
+	public String playerNotDeleted() {
+		return "deleteViews/deleteError";
 	}
 }

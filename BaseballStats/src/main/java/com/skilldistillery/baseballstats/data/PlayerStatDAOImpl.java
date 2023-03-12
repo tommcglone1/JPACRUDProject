@@ -49,6 +49,7 @@ public class PlayerStatDAOImpl implements PlayerStatDAO {
 		updatedPlayer.setHomeruns(player.getHomeruns());
 		updatedPlayer.setBattingAverage(player.getBattingAverage());
 		updatedPlayer.setWAR(player.getWAR());
+		updatedPlayer.setImgUrl(player.getImgUrl());
 		return updatedPlayer;
 	}
 

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,13 +40,23 @@
 				</tr>
 			</tbody>
 		</table>
-
+		<c:choose>
+			<c:when test="${not empty player.imgUrl }">
+				<img class="playerPicture" src="${player.imgUrl}"
+					alt="Player Picture">
+			</c:when>
+			<c:otherwise>
+			</c:otherwise>
+		</c:choose>
+		<br>
 		<form action="delete.do" method="POST">
 			<label for="playerId"></label> <input type="hidden" name="playerId"
-				value="${player.id}" /> <input type="submit" class="btn btn-dark" value="Delete" />
+				value="${player.id}" /> <input type="submit" class="btn btn-dark"
+				value="Delete" />
 		</form>
-
-		<a class="btn btn-light" href="beginUpdate.do?playerId=${player.id}" role="button">Update</a>
+		<br>
+		<a class="btn btn-light" href="beginUpdate.do?playerId=${player.id}"
+			role="button">Update</a>
 		<jsp:include page="../bootstrapfooter.jsp" />
 	</div>
 

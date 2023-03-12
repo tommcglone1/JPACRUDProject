@@ -11,7 +11,7 @@
 	<jsp:include page="../navbar.jsp" />
 	<div class="container-fluid">
 		<h2>Your Delete was Unsuccessful.</h2>
-		<p>Please ensure that you have not already deleted this player</p>
+		<h2>Please ensure that you have not already deleted this player</h2>
 	</div>
 	<jsp:include page="../bootstrapfooter.jsp" />
 </body>
