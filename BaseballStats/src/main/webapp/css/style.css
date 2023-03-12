@@ -1,5 +1,13 @@
+.navBarForm {
+	color: black;
+}
+
 #table2 {
 	width: 20%;
+}
+.logo {
+	width: 70px;
+	height: auto;
 }
 
 thead {
