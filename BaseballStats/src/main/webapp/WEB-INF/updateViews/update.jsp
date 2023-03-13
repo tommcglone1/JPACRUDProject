@@ -26,6 +26,7 @@
 				<option value="Angels">Angels</option>
 				<option value="Orioles">Orioles</option>
 				<option value="Yankees">Yankees</option>
+				<option value="FA">Free Agent</option>
 			</select> <br> <label for="position">Position</label> <select
 				name="position" id="position">
 				<option value="${player.position}" selected>${player.position}</option>

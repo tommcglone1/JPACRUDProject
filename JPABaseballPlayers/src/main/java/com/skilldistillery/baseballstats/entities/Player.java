@@ -23,15 +23,15 @@ public class Player {
 
 	private String position;
 
-	private int hits;
+	private Integer hits;
 
-	private int homeruns;
+	private Integer homeruns;
 
 	@Column(name = "batting_average")
-	private double battingAverage;
+	private Double battingAverage;
 
 	@Column(name = "wins_above_replacement")
-	private double WAR;
+	private Double WAR;
 	
 	@Column(name="imgurl")
 	private String imgUrl;
