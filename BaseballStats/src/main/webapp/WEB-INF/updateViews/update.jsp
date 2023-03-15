@@ -19,7 +19,7 @@
 				name="firstName" value="${player.firstName}" required /> <br> <label
 				for="lastName">Last Name: </label> <input type="text" name="lastName"
 				value="${player.lastName}" required /> <br> <label for="team">Team:
-			</label> <select name="team" id="team">
+			</label> <select name="team" id="team" required>
 				<option value="${player.team}" selected>${player.team}</option>
 				<option value="Phillies">Phillies</option>
 				<option value="Braves">Braves</option>
@@ -28,7 +28,7 @@
 				<option value="Yankees">Yankees</option>
 				<option value="FA">Free Agent</option>
 			</select> <br> <label for="position">Position</label> <select
-				name="position" id="position">
+				name="position" id="position" required>
 				<option value="${player.position}" selected>${player.position}</option>
 				<option value="Pitcher">Pitcher</option>
 				<option value="Catcher">Catcher</option>
@@ -40,12 +40,12 @@
 				<option value="Center Field">Center Field</option>
 				<option value="Right Field">Right Field</option>
 			</select> <br> <label for="hits">Number of Hits:</label> <input
-				type="number" name="hits" value="${player.hits}" min="0">
+				type="number" name="hits" value="${player.hits}" min="0" required>
 			<br> <label for="homeruns">Number of Homeruns:</label> <input
 				type="number" name="homeruns" value="${player.homeruns}"
-				min="0"> <br> <label for="battingAverage">Batting
+				min="0" required> <br> <label for="battingAverage">Batting
 				Average:</label> <input type="number" step="0.001" name="battingAverage"
-				min=".000" max="1" value="${player.battingAverage}"> <br>
+				min=".000" max="1" value="${player.battingAverage}" required> <br>
 			<label for="WAR">WAR:</label> <input type="number" step="0.1"
 				name="WAR" min="-162" max="162" value="${player.WAR}"> <br>
 

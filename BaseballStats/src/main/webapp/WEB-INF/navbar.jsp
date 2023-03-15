@@ -22,6 +22,10 @@
 						a Player</a></li>
 
 			</ul>
+			<form class="navBarForm" action="findPlayerDataByLastName.do" method="GET">
+				Search a player by Last Name <input type="text" name="lastName" />
+				<input type="submit" value="Search">
+			</form>
 			<form class="navBarForm" action="findPlayerDataById.do" method="GET">
 				Search a player by ID number <input type="number" name="playerId" />
 				<input type="submit" value="Search">

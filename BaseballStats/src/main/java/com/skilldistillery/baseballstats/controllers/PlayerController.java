@@ -29,7 +29,13 @@ public class PlayerController {
 		mv.addObject("player", playerDao.findById(playerId));
 		mv.setViewName("viewPlayer");
 		return mv;
-
+	}
+	@RequestMapping(path = "findPlayerDataByLastName.do")
+	public ModelAndView findPlayerByLastName(String lastName) {
+		ModelAndView mv = new ModelAndView();
+		mv.addObject("players", playerDao.findPlayerByLastName(lastName));
+		mv.setViewName("findByLastName");
+		return mv;
 	}
 
 	@RequestMapping(path = "create.do", method = RequestMethod.POST)

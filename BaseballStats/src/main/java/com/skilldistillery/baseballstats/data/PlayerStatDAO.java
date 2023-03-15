@@ -8,6 +8,8 @@ public interface PlayerStatDAO {
 	Player findById(int id);
 
 	List<Player> findAll();
+	
+	List<Player> findPlayerByLastName(String lastName);
 
 	Player create(Player player);
 

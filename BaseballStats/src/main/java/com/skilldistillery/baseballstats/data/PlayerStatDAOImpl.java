@@ -1,5 +1,6 @@
 package com.skilldistillery.baseballstats.data;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.EntityManager;
@@ -26,6 +27,18 @@ public class PlayerStatDAOImpl implements PlayerStatDAO {
 	public List<Player> findAll() {
 		String jpql = "SELECT player FROM Player player";
 		return em.createQuery(jpql, Player.class).getResultList();
+	}
+	
+	@Override
+	public List<Player> findPlayerByLastName(String lastName){
+		
+		String jpql = "SELECT player FROM Player player "
+				+ "WHERE player.lastName LIKE :lastName";
+		List<Player> playerList = em.createQuery(jpql, Player.class)
+				.setParameter("lastName","%" + lastName + "%")
+				.getResultList();
+		
+		return playerList;
 	}
 
 	@Override
